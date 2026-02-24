@@ -1,0 +1,51 @@
+public class Tests {
+import java.util.Scanner;
+import java.text.DecimalFormat;
+
+    // ===== Private data fields =====
+    private double average;   // will be calculated
+    private int count;        // number of scores entered
+
+    // ===== Constructor =====
+    public Tests() {
+        this.average = 0.0;
+        this.count = 0;
+    }
+
+    // ===== Public method: getAverage() =====
+    // NOTE: return type is void (per assignment instructions)
+    public void getAverage() {
+
+        Scanner sc = new Scanner(System.in);
+
+        double sum = 0.0;
+        int localCount = 0;
+
+        System.out.println("Enter test scores (-1 to quit): ");
+        double score = sc.nextDouble();   // prime the loop
+
+        while (score != -1) {
+            sum += score;
+            localCount++;
+
+            System.out.println("Enter test scores (-1 to quit): ");
+            score = sc.nextDouble();
+        }
+
+        // Save results into object fields
+        this.count = localCount;
+
+        if (localCount > 0) {
+            this.average = sum / localCount;
+        } else {
+            this.average = Double.NaN;   // matches assignment expectation
+        }
+    }
+
+    // ===== toString() =====
+    @Override
+    public String toString() {
+        DecimalFormat df = new DecimalFormat("0.00");
+        return "The average of the " + count + " scores entered is " + df.format(average) + ".";
+    }
+}
