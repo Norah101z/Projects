@@ -1,0 +1,57 @@
+import java.util.ArrayList;
+
+public class Asn5 {
+    public static void main(String[] args) {
+
+        // First ArrayList: Strings
+        ArrayList<String> fruits = new ArrayList<>();
+        fruits.add("Apple");
+        fruits.add("Banana");
+        fruits.add("Cherry");
+        fruits.add("Date");
+
+        // Second ArrayList: Integers
+        ArrayList<Integer> numbers = new ArrayList<>();
+        numbers.add(10);
+        numbers.add(20);
+        numbers.add(30);
+        numbers.add(40);
+
+        // --- Display contents (3 different ways) ---
+
+        System.out.println("String ArrayList (basic for loop):");
+        for (int i = 0; i < fruits.size(); i++) {
+            System.out.println(fruits.get(i));
+        }
+
+        System.out.println("\nInteger ArrayList (enhanced for loop):");
+        for (int n : numbers) {
+            System.out.println(n);
+        }
+
+        System.out.println("\nString ArrayList (forEach method):");
+        fruits.forEach(item -> System.out.println(item));
+
+        // --- Try 2 ArrayList methods: remove() and set() ---
+
+        System.out.println("\nModifying lists...");
+
+        // Remove one element from each list
+        fruits.remove(1);      // removes "Banana"
+        numbers.remove(2);     // removes 30
+
+        // Replace an element using set()
+        fruits.set(1, "Blueberry");  // replaces "Cherry"
+        numbers.set(1, 99);          // replaces 20
+
+        // --- Display lists again after modification ---
+
+        System.out.println("\nString ArrayList after modifications:");
+        for (String f : fruits) {
+            System.out.println(f);
+        }
+
+        System.out.println("\nInteger ArrayList after modifications:");
+        numbers.forEach(num -> System.out.println(num));
+    }
+}
