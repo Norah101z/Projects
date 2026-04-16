@@ -1,0 +1,42 @@
+public class Pet {
+
+//private data fields
+    private String name;
+//public Constructor(s)
+    public Pet()
+    {
+        this.setName("Flower");
+    }
+
+//public set or mutator method for every private data field (except when the data field is read-only
+    public void setName(String newName)
+    {
+        this.name = newName;
+    }
+//public get or accessor method for every private data field (except if it is a secret)
+public String getName()
+    {
+        return this.name;
+    }
+//public toString method that prints out all the object state (meaning the data in the object instance that you will later instantiate in the main() method
+   public String toString()
+   {
+    String output = "Pet name: Flower ";
+    output += this.getName();
+    return output;
+    }
+//main
+static void main(String[] args)
+
+    {
+        //First Pet
+        Pet myPet1 = new Pet();
+        myPet1.setName("Flower");
+        Pet myPet2 = new Pet();
+        myPet2.setName("Rose");
+
+        System.out.println(myPet1.getName());
+        System.out.println(myPet1);
+        System.out.println(myPet2.getName());
+        System.out.println(myPet2.getName());
+    }
